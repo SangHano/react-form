@@ -1,6 +1,6 @@
 import {useState} from "react"
 const API_URL = (`https://fsa-jwt-practice.herokuapp.com/signup`)
-const SignUpForm = ()=>{
+const SignUpForm = ({ setToken }) => {
         const [username, setUsername] = useState("");
          /* const usernameInput = (event) =>{
             const typedInValue = event.target.value;
@@ -29,8 +29,10 @@ const SignUpForm = ()=>{
                         throw new Error('There was an issue with signing up.');
                     }
             
-                    const data = await response.json();
-                    console.log(data);
+                    const result = await response.json();
+                    if (result && result.token) {
+                        setToken(result.token);
+                    }
             
                 } catch (error) {
                     setError(error.message);
