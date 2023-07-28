@@ -1,1 +1,15 @@
-
+h2{
+    text-decoration: underline;
+    font-style: italic;
+    text-align: center;
+ 
+}
+body{
+    background-image: url("webbackground.jpg");
+}
+form{
+    text-align: center;
+}
+div{
+    text-align: center;
+}

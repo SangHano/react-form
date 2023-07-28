@@ -1,6 +1,7 @@
 import SignUpForm from "./components/SignForm.jsx"
 import Authenticate from "./components/Authenicate.jsx"
 import {useState} from "react"
+import './App.css'
 
 
 function App() {

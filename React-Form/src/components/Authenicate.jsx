@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+
 const API_URL ="https://fsa-jwt-practice.herokuapp.com/signup"
 const Authenticate =({ token })=>{
     const [error, setError] = useState(null);
+
     const [successMessage, setSuccessMessage] = useState(null);
+    
     const authenticate = async () => {
         try {
             const response = await fetch(API_URL, {
@@ -20,6 +23,7 @@ const Authenticate =({ token })=>{
 
             setSuccessMessage('Success Message');
         } catch (error) {
+            setError(error.message); 
             console.error('Error:', error);
         }
     };
